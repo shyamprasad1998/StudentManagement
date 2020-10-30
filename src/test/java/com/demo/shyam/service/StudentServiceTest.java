@@ -27,8 +27,9 @@ class StudentServiceTest {
 
     @Test
     void addStudent() {
-        Student temp=new Student("shyam","prasad",9340538008l);
-        assertEquals(temp,studentService.addStudent("shyam","prasad",9340538008l));
+        Student temp=new Student("shyam","prasad",9340538003l);
+        when(studentRepository.save(temp)).thenReturn(temp);
+        assertEquals(temp,studentService.addStudent("shyam","prasad",9340538003l));
     }
 
     @Test
